@@ -1,0 +1,312 @@
+/* CSS STARTER */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* Mostly equivalates to 10px but allows users accessibility zoom settings to work*/
+  /* font-size: 10px; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*   color-scheme: dark light; */
+  min-height: 100vh;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  margin: 0;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Try to keep your margins going in one direction to avoid margin collapase or grounding. I switch all the top margins off to avoid this issue. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+blockquote,
+address,
+article,
+aside,
+details,
+dialogue,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+header,
+hr,
+main,
+nav,
+pre,
+section,
+table,
+p {
+  margin-top: 0;
+  margin-block-start: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  /* You MUST make sure that links stand out from nomal text though...*/
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  /* This means that it can be less than 100% of the width of its parent IF the image is INTRINSICALLY smaller */
+  max-width: 100%;
+  height: auto;
+  /* 'auto' is the initial value for height BUT for images (and other elements which have an intrinic height) that is not the case. To make an image responsive you set one dimension (usually width) to [max-]width: 100%; and the other to 'auto' to ensure it keeps aspect ratio. 'auto' basically tells the browser to decide. */
+}
+
+/* Because we us <ul>s for lists that we don't always want bulletted. */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* To make actual bulletted lists */
+ul.typographic {
+  list-style: initial;
+  padding-inline-start: 20px;
+}
+
+/* stops icons being the target of JS click events */
+/* .btn *,
+button * {
+  pointer-events: null;
+  user-select: none;
+} */
+/* inherits the font */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  font-family: Caudex, sans-serif;
+}
+
+.flex-center,
+.contact_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.flex-wrap,
+.photo_wall,
+header {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.link-hover,
+footer a:hover,
+header a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 1.9rem;
+  margin: 1px;
+}
+
+h2 {
+  font-size: 3rem;
+  margin: 1px;
+}
+
+p {
+  font-size: 1.3rem;
+  margin: 1px;
+}
+
+header {
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+header a {
+  padding: 2px;
+}
+.logo,
+.burgerMenu {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.logo img {
+  height: 35px;
+}
+
+.title {
+  padding: 4px;
+}
+
+.burgerMenu img {
+  height: 25px;
+  margin: 6px;
+}
+
+.menu {
+  display: none;
+}
+
+.homepage {
+  background-image: url(./images/homepage_background.jpeg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.homepageText {
+  padding-top: 20vh;
+  text-align: center;
+}
+
+.photo_wall {
+  justify-content: center;
+}
+.photo_wall .img_container {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.img_container img {
+  width: 300px;
+}
+
+.img_overlay {
+  padding: 5px;
+  text-align: center;
+}
+
+.contact_page {
+  height: 750px;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 700px) {
+  h1 {
+    font-size: 2.6rem;
+    margin: 1px;
+  }
+  p {
+    font-size: 1.5rem;
+    margin: 1px;
+  }
+  header {
+    justify-content: space-between;
+  }
+  .logo,
+  .burgerMenu {
+    width: 20%;
+  }
+  .burgerMenu {
+    display: flex;
+    justify-content: flex-end;
+  }
+  header a {
+    padding: 5px;
+  }
+  .logo img {
+    height: 50px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  h1 {
+    font-size: 3.5rem;
+    margin: 1px;
+  }
+  p {
+    font-size: 1.7rem;
+    margin: 1px;
+  }
+  .logo,
+  .menu {
+    width: 28%;
+  }
+  .logo {
+    padding-left: 30px;
+  }
+  .logo img {
+    height: 80px;
+  }
+  .menu {
+    display: block;
+    text-align: end;
+    padding-right: 20px;
+  }
+  .burgerMenu {
+    display: none;
+  }
+  .homepageText {
+    padding-top: 17vh;
+  }
+  h2 {
+    font-size: 3.5rem;
+    margin: 1px;
+  }
+  .img_container {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    border: 3px;
+    border-style: solid;
+    border-color: #ffffff;
+  }
+  .img_container:hover {
+    border-color: #efd5c0;
+  }
+  .img_container img {
+    width: 400px;
+  }
+  .img_overlay {
+    background-color: white;
+    opacity: 0.6;
+    height: 100%;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(100%);
+  }
+  .img_container:hover .img_overlay {
+    transform: translateY(0%);
+  }
+} /*# sourceMappingURL=style.css.map */
